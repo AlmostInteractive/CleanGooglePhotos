@@ -4,7 +4,7 @@ function PageMain() {
 
 
     function start() {
-        console.log('starting main page');
+        //console.log('starting main page');
 
         chrome.runtime.onMessage.addListener(messageListner);
 
@@ -13,7 +13,7 @@ function PageMain() {
     }
 
     function stop() {
-        console.log('stopping main page');
+        //console.log('stopping main page');
 
         chrome.runtime.onMessage.removeListener(messageListner);
 
@@ -28,7 +28,6 @@ function PageMain() {
         switch (msg.type) {
             case 'element-hash': {
                 $('#' + MAIN_IMAGE_PREFIX + msg.id).attr('hash', msg.hash);
-                console.log(msg.id + ' :: ' + msg.hash);
                 break;
             }
 

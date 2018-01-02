@@ -6,7 +6,7 @@ function PageAlbum() {
 
 
     function start() {
-        console.log('starting album page');
+        //console.log('starting album page');
 
         chrome.runtime.onMessage.addListener(messageListner);
 
@@ -14,7 +14,7 @@ function PageAlbum() {
     }
 
     function stop() {
-        console.log('stopping album page');
+        //console.log('stopping album page');
 
         chrome.runtime.onMessage.removeListener(messageListner);
 
@@ -65,7 +65,7 @@ function PageAlbum() {
             chrome.runtime.sendMessage({type: 'save'});
             _timeout = setTimeout(checkImages, 500);
         }
-        console.log(_cached + ' of ' + _requested);
+        //console.log(_cached + ' of ' + _requested);
     }
 
     return {
