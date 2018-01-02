@@ -1,0 +1,12 @@
+.uncached {
+    border: 2px dashed red;
+}
+
+.cached {
+    border: 2px dashed green;
+}
+
+.inAlbum {
+    visibility: hidden !important;
+    display: none !important;
+}

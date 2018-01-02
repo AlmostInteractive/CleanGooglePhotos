@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "manifest_version": 2,
+  "name": "Clean Google Photo",
+  "description": "Hides photos from the main Google Photos view which are known to be in an album.",
+  "author": "Steven J @ AlmostInteractive Games",
+  "homepage_url": "https://github.com/AlmostInteractive/CleanGooglePhotos",
+  "icons": {
+    "128": "icons/title.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "https://lh3.googleusercontent.com/*"
+  ],
+  "browser_action": {
+    "default_icon": "icons/32-on.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://photos.google.com/*"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "js": [
+        "vendor/jquery-3.2.1.min.js",
+        "vendor/md5.js",
+        "utils.js",
+        "contentPageMain.js",
+        "contentPageAlbum.js",
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "vendor/md5.js",
+      "vendor/jpeg.js",
+      "vendor/blockhash.js",
+      "background.js"
+    ],
+    "persistent": false
+  }
+}
